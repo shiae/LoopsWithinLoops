@@ -9,9 +9,9 @@ Authors: David Mutchler, Valerie Galluzzi, Mark Hays, Amanda Stouder,
 
 def main():
     """ Calls the other functions to test them. """
-    run_test_multiply_numbers()
+    # run_test_multiply_numbers()
     # run_test_sum_numbers()
-    # run_test_print_characters()
+    run_test_print_characters()
     # run_test_print_characters_slanted()
 
 
@@ -171,9 +171,16 @@ def sum_numbers(seq_seq):
                     and each item in the subsequences is a number.
     """
     # ------------------------------------------------------------------
-    # TODO: 4. Implement and test this function.
+    # DONE: 4. Implement and test this function.
     #   Note that you should write its TEST function first (above).
     # ------------------------------------------------------------------
+
+    count = 0
+    for j in range(len(seq_seq)):
+        for k in range(len(seq_seq[j])):
+            count = count + seq_seq[j][k]
+
+    return count
 
 
 def run_test_print_characters():

@@ -80,34 +80,45 @@ def draw_L(window, circle, r, c):
     and m and n are small, positive integers.
     """
     # ------------------------------------------------------------------
-    # TODO: 2. Implement and test this function.
+    # DONE: 2. Implement and test this function.
     #     The testing code is already written for you (above).
     # ------------------------------------------------------------------
 
     # column
-
+    x = circle.center.x
+    y = circle.center.y
+    original_x = circle.center.x
     for j in range(r):
         for k in range(3):
             new_circle = rg.Circle(rg.Point(x, y), circle.radius)
             new_circle.fill_color = circle.fill_color
             new_circle.attach_to(window)
             window.render(0.1)
-            new_center.x = new_center.x + 2 * circle.radius
-        new_center.x = original_center.x
-        new_center.y = new_center.y + 2 * circle.radius
+            x = x + (2 * circle.radius)
+        x = original_x
+        y = y + (2 * circle.radius)
 
     # corner
     for j in range(3):
         for k in range(3):
-            circle.attach_to(window)
+            new_circle = rg.Circle(rg.Point(x, y), circle.radius)
+            new_circle.fill_color = circle.fill_color
+            new_circle.attach_to(window)
             window.render(0.1)
+            x = x + (2 * circle.radius)
+        x = original_x
+        y = y + (2 * circle.radius)
 
     # row
     for j in range(3):
         for k in range(c):
-            circle.attach_to(window)
+            new_circle = rg.Circle(rg.Point(x, y), circle.radius)
+            new_circle.fill_color = circle.fill_color
+            new_circle.attach_to(window)
             window.render(0.1)
-
+            x = x + (2 * circle.radius)
+        x = original_x
+        y = y + (2 * circle.radius)
     window.render()
 
 
